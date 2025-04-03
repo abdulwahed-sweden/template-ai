@@ -18,14 +18,11 @@ import sys
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-from dotenv import load_dotenv
-import os
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-load_dotenv()
-
-SECRET_KEY = os.getenv("SECRET_KEY")
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
-
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-l@pp42od&rb*8*y*(h)p9gcy*4#8#t99ho1t12jpcl5)rz9arg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,7 +57,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Directory for templates
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -110,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Stockholm'  # for Stockholm
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
